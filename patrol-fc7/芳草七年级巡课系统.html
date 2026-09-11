@@ -210,7 +210,7 @@ body {
 }
 .special-badge.开会 { background: var(--purple-bg); color: var(--purple); }
 .special-badge.学生自习 { background: var(--teal-bg); color: var(--teal); }
-.special-badge.室外体育课 { background: var(--orange-bg); color: var(--orange); }
+.special-badge.室外体育课, .special-badge.室外课 { background: var(--orange-bg); color: var(--orange); }
 .duty-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; margin-left: 8px; color: var(--text2); background: #f5f7fa; border: 1px solid var(--border); cursor: pointer; transition: all .15s; }
 .duty-tag.active { background: var(--primary-bg); color: var(--primary); border-color: var(--primary); font-weight: 600; }
 
@@ -537,7 +537,7 @@ body { font-size: 16px; line-height: 1.5; }
     </div>
     <div class="patrol-actions">
       <button class="btn btn-outline btn-sm" onclick="resetAllToA()">全部标记为A</button>
-      <button class="btn btn-outline btn-sm" onclick="resetAllToOutdoor()">⚽ 全部标记为室外体育课</button>
+      <button class="btn btn-outline btn-sm" onclick="resetAllToOutdoor()">⚽ 全部标记为室外课</button>
       <button class="btn btn-outline btn-sm" onclick="toggleStandards()">📋 打分标准</button>
       <span id="patrolSaveStatus" class="save-indicator"></span>
     </div>
@@ -753,10 +753,10 @@ function schedulePatrolSave(dateStr, classId, period) {
 // 详细图文步骤见《部署指南.html》
 // ============================================================
 const EMBEDDED_CONFIG = {
-  supabaseUrl: 'https://gcjgdjqjsirkczutibbl.supabase.co',
-  supabaseKey: 'sb_publishable_MLJYlisOZcSYVfPL8-FoaQ_-N5cn8go'
+  supabaseUrl: 'https://obwzkxilsnxowhenicbu.supabase.co',
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9id3preGlsc254b3doZW5pY2J1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5MTkwNzAsImV4cCI6MjEwNDQ5NTA3MH0.Ls_dK_dTXObxkt4glFvWbpnMrC8L1wMcDImIinY6KjI'
 };
-const ADMIN_PASSWORD = 'fczx2026';
+const ADMIN_PASSWORD = 'eqjwc';
 // 全体教师统一登录密码（三个年级网页共用同一个，修改后请同步告知老师们）
 const TEACHER_PASSWORD = 'fc2026';
 const PATROL_GROUPS = ['语文', '数学', '英语', '道法', '历史', '综合'];
@@ -814,14 +814,15 @@ const SPECIAL_OPTIONS = [
   { value: '', label: '正常' },
   { value: '开会', label: '开年级大会' },
   { value: '学生自习', label: '学生自习' },
-  { value: '室外体育课', label: '室外体育课' }
+  { value: '室外课', label: '室外课' }
 ];
 const SCORE_COLORS = { 'A': 'var(--green)', 'B': 'var(--orange)', 'C': 'var(--red)' };
 const SCORE_BG = { 'A': 'var(--green-bg)', 'B': 'var(--orange-bg)', 'C': 'var(--red-bg)' };
 const SPECIAL_DISPLAY = {
   '开会': { short: '开会', badge: '📢 开年级大会' },
   '学生自习': { short: '自习', badge: '📖 学生自习' },
-  '室外体育课': { short: '体育课', badge: '⚽ 室外体育课' }
+  '室外课': { short: '体育课', badge: '⚽ 室外课' },
+  '室外体育课': { short: '体育课', badge: '⚽ 室外课' }
 };
 // B/C 等级的预设原因标签
 const REASON_TAGS = {
@@ -1069,7 +1070,7 @@ function initLoginDept() {
     GRADE_CONFIG.depts.map(d => '<option value="' + d.name + '">' + deptRangeLabel(d) + '</option>').join('');
 }
 function renderPatrolPlan() {
-  const DEFAULT_PLAN = { 1: '数学', 2: '历史', 3: '语文', 4: '道法', 5: '英语' };
+  const DEFAULT_PLAN = { 1: '数学', 2: '语文', 3: '综合/道法', 4: '历史', 5: '英语' };
   const PLAN = GRADE_CONFIG.patrolPlan || DEFAULT_PLAN;
   const NAMES = { 1: '周一', 2: '周二', 3: '周三', 4: '周四', 5: '周五' };
   const today = todayWd();
@@ -1528,10 +1529,10 @@ async function resetAllToA() {
 }
 
 async function resetAllToOutdoor() {
-  showConfirm('确定将所有班级标记为室外体育课吗？', async function() {
+  showConfirm('确定将所有班级标记为室外课吗？', async function() {
     for (const cls of visibleClasses()) {
       const key = cls.id + '_' + state.currentPeriod;
-      state.records[key] = { scores: {}, reasons: {}, remark: '', special: '室外体育课', has_photo: false, inspector: state.teacher };
+      state.records[key] = { scores: {}, reasons: {}, remark: '', special: '室外课', has_photo: false, inspector: state.teacher };
       try {
         await savePatrolRecord(state.viewDate, cls.id, state.currentPeriod, state.records[key]);
       } catch (err) {
@@ -1540,7 +1541,7 @@ async function resetAllToOutdoor() {
       }
     }
     renderPatrol();
-    showToast('已全部标记为室外体育课', 'success');
+    showToast('已全部标记为室外课', 'success');
   });
 }
 
@@ -1562,25 +1563,29 @@ function getPhotoUrl(path) {
   return data.publicUrl;
 }
 async function compressImage(file, maxWidth, quality) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const img = new Image();
-      img.onload = function() {
-        const canvas = document.createElement('canvas');
-        let w = img.width, h = img.height;
-        if (w > maxWidth) { h = Math.round(h * maxWidth / w); w = maxWidth; }
-        canvas.width = w; canvas.height = h;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, w, h);
-        resolve(canvas.toDataURL('image/jpeg', quality));
+  // 优先用 createImageBitmap 读取真实方向，修复手机拍照照片旋转90°的问题
+  let img;
+  try {
+    img = await createImageBitmap(file, { imageOrientation: 'from-image' });
+  } catch (e) {
+    img = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const im = new Image();
+        im.onload = function() { resolve(im); };
+        im.onerror = reject;
+        im.src = ev.target.result;
       };
-      img.onerror = reject;
-      img.src = e.target.result;
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+  let w = img.width, h = img.height;
+  if (w > maxWidth) { h = Math.round(h * maxWidth / w); w = maxWidth; }
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+  return canvas.toDataURL('image/jpeg', quality);
 }
 
 async function onPhotoSelected(classId, period, input) {
