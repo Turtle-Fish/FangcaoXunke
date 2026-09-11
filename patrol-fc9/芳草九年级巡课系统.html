@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-<link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<html lang="zh" data-page-node-id="LY3qv6bnEahCeWYb5gDg7a">
+<head data-page-node-id="yEWf39CeSUJakxdlGPGST9">
+<link rel="preconnect" href="https://cdn.bootcdn.net" crossorigin data-page-node-id="e5ThyqFyJNsyZJENrWfRe4">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin data-page-node-id="fNJcGTHvVhtMB7LtL1YFwR">
 <style>
 #app-loading{position:fixed;top:0;left:0;width:100%;height:100%;background:#f0f2f5;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;transition:opacity .3s}
 #app-loading .spinner{width:40px;height:40px;border:3px solid #e0e0e0;border-top-color:#1677ff;border-radius:50%;animation:spin .8s linear infinite}
 #app-loading .text{margin-top:16px;color:#8c8c8c;font-size:15px}
 @keyframes spin{to{transform:rotate(360deg)}}
 </style>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta charset="UTF-8" data-page-node-id="b0Zzc68i3vcCefbxyrzW8N">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" data-page-node-id="HeZc0M1wCUTkNGX0jRYWWb">
 <title>芳草九年级巡课汇总反馈系统 v1.0.0</title>
 <style>
 :root {
@@ -210,7 +210,7 @@ body {
 }
 .special-badge.开会 { background: var(--purple-bg); color: var(--purple); }
 .special-badge.学生自习 { background: var(--teal-bg); color: var(--teal); }
-.special-badge.室外体育课 { background: var(--orange-bg); color: var(--orange); }
+.special-badge.室外体育课, .special-badge.室外课 { background: var(--orange-bg); color: var(--orange); }
 .duty-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; margin-left: 8px; color: var(--text2); background: #f5f7fa; border: 1px solid var(--border); cursor: pointer; transition: all .15s; }
 .duty-tag.active { background: var(--primary-bg); color: var(--primary); border-color: var(--primary); font-weight: 600; }
 
@@ -444,255 +444,255 @@ body { font-size: 16px; line-height: 1.5; }
 }
 </style>
 </head>
-<body>
-<div id="app-loading"><div class="spinner"></div><div class="text">正在加载系统...</div></div>
+<body data-page-node-id="JTfithurD7htTBT23jhDEL">
+<div id="app-loading" data-page-node-id="ZqS5AHhyeoACkCKTbZBPbC"><div class="spinner" data-page-node-id="D6yTKrr3VGjiaBChlXMy4k"></div><div class="text" data-page-node-id="TTU08yIBZ4XER2zHP2Osgs">正在加载系统...</div></div>
 
-<div id="loadingOverlay" class="screen-hidden">
-  <div class="spinner"></div>
-  <div id="loadingText">加载中...</div>
+<div id="loadingOverlay" class="screen-hidden" data-page-node-id="QpoOedWaE5SrrpDf4jID8k">
+  <div class="spinner" data-page-node-id="OwlJHZ0hiGcok47p2A0VIh"></div>
+  <div id="loadingText" data-page-node-id="onB3Bl7IzPiAdqGtar4bV9">加载中...</div>
 </div>
 
-<div id="toastContainer"></div>
+<div id="toastContainer" data-page-node-id="ydeMZE6iVPwXHomLeGHlGe"></div>
 
 <!-- ===== Login Screen ===== -->
-<div id="loginScreen">
-  <div class="login-card">
-    <h1>📋 芳草九年级巡课汇总反馈系统</h1>
-    <div class="version">v1.0.0</div>
-    <div class="subtitle">武汉市二桥中学 · 芳草九年级</div>
-    <div class="form-group">
-      <label>教师登录密码</label>
-      <input type="password" id="teacherPassword" placeholder="请输入教师统一密码" onkeydown="if(event.key==='Enter')doLogin()">
+<div id="loginScreen" data-page-node-id="QUfnapFnC23SZkQgO11Dvn">
+  <div class="login-card" data-page-node-id="V6x9D4XHr3gIVPOdo6xlzT">
+    <h1 data-page-node-id="WS1FEi19SNrX0EZfIIaqxx">📋 芳草九年级巡课汇总反馈系统</h1>
+    <div class="version" data-page-node-id="vYcTgHBMM53OasL8Rrv6O2">v1.0.0</div>
+    <div class="subtitle" data-page-node-id="WR4ORKLifAzMTBIzlXPJpr">武汉市二桥中学 · 芳草九年级</div>
+    <div class="form-group" data-page-node-id="Km0dLiiBElaspEmDhOStjJ">
+      <label data-page-node-id="UIpUcJmXw9k0yJHhgcs02k">教师登录密码</label>
+      <input type="password" id="teacherPassword" placeholder="请输入教师统一密码" onkeydown="if(event.key==='Enter')doLogin()" data-page-node-id="vjJHNRUS39tq2Sb1kITTCO">
     </div>
-    <div class="form-group" id="loginDeptGroup">
-      <label>级部</label>
-      <select id="loginDept" onchange="updateTeacherList()">
-        <option value="">请选择级部</option>
+    <div class="form-group" id="loginDeptGroup" data-page-node-id="hSE63y8qqrPl0cCDCpKQQH">
+      <label data-page-node-id="IxrGTHiZw5rWF5bMoVdY0j">级部</label>
+      <select id="loginDept" onchange="updateTeacherList()" data-page-node-id="agvobJ42uDHwr5iNbmbat0">
+        <option value="" data-page-node-id="oVKjAKCazlpHgGvdp1s6Ar">请选择级部</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>备课组</label>
-      <select id="loginGroup" onchange="updateTeacherList()">
-        <option value="">请选择备课组</option>
+    <div class="form-group" data-page-node-id="ocqx8pnePLWuUltHDeCN76">
+      <label data-page-node-id="vwHY8azqh17VxjSYqqAT0K">备课组</label>
+      <select id="loginGroup" onchange="updateTeacherList()" data-page-node-id="sfAtSAQ0dNuAwPl5I16Au2">
+        <option value="" data-page-node-id="nP9dNpxrUYHZgL134QmYN4">请选择备课组</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>巡课教师</label>
-      <select id="loginTeacher">
-        <option value="">请先选择备课组</option>
+    <div class="form-group" data-page-node-id="Csm0pMzoT4FPTplc3PDb9b">
+      <label data-page-node-id="dG2gUjouUsu2UOgYftDFQ9">巡课教师</label>
+      <select id="loginTeacher" data-page-node-id="fzd5rafNJXQ7LYP3LBwrTv">
+        <option value="" data-page-node-id="u8BC0D7FYT2NGA4VGxqxDB">请先选择备课组</option>
       </select>
     </div>
-    <button class="btn btn-primary btn-block" onclick="doLogin()">登录巡课</button>
-    <div id="patrolPlanBox"></div>
-    <div class="admin-link" onclick="showAdminLogin()">教务处入口</div>
+    <button class="btn btn-primary btn-block" onclick="doLogin()" data-page-node-id="MHotOBZ86dU437uXIXqrlg">登录巡课</button>
+    <div id="patrolPlanBox" data-page-node-id="CsxsHwMJUCAPe7EoCsOFyj"></div>
+    <div class="admin-link" onclick="showAdminLogin()" data-page-node-id="XWyZHlfJsUseuLaNeWOHlT">教务处入口</div>
   </div>
 </div>
 
 <!-- ===== Admin Login ===== -->
-<div id="adminLoginScreen" class="screen-hidden">
-  <div class="login-card">
-    <h1>🔐 教务处登录</h1>
-    <div class="subtitle">巡课汇总反馈系统</div>
-    <div class="form-group">
-      <label>密码</label>
-      <input type="password" id="adminPassword" placeholder="请输入教务处密码" onkeydown="if(event.key==='Enter')doAdminLogin()">
+<div id="adminLoginScreen" class="screen-hidden" data-page-node-id="RsPOTqaxUpEhMvDACPy6D1">
+  <div class="login-card" data-page-node-id="bbpOxQ8vb8o0CTmiAqqbwd">
+    <h1 data-page-node-id="Y0Cu9NR204VNBzI2VpT8pf">🔐 教务处登录</h1>
+    <div class="subtitle" data-page-node-id="f0HsPK0mbbAkirJpqQCjoV">巡课汇总反馈系统</div>
+    <div class="form-group" data-page-node-id="LFCbfQ0cjVj9RjCU3KhBgv">
+      <label data-page-node-id="A0UpoY9DY9kZpmgF677F71">密码</label>
+      <input type="password" id="adminPassword" placeholder="请输入教务处密码" onkeydown="if(event.key==='Enter')doAdminLogin()" data-page-node-id="JUzEp7n4xUg6AJSymFpwcw">
     </div>
-    <button class="btn btn-primary btn-block" onclick="doAdminLogin()">登录</button>
-    <div class="admin-link" onclick="showLoginScreen()">返回教师登录</div>
+    <button class="btn btn-primary btn-block" onclick="doAdminLogin()" data-page-node-id="dVhPjQPS4R2im9bs1qUNBI">登录</button>
+    <div class="admin-link" onclick="showLoginScreen()" data-page-node-id="aikLW5tg9FBNsSUGuB98zE">返回教师登录</div>
   </div>
 </div>
 
 <!-- ===== Main App ===== -->
-<div id="mainApp" class="screen-hidden">
-  <div class="app-header">
-    <h1>📋 芳草九年级巡课汇总 <span class="ver">v1.0.0</span></h1>
-    <div class="header-info">
-      <div class="user" id="headerUser"></div>
-      <div class="date" id="headerDate"></div>
-      <button class="logout-btn" onclick="logout()">退出</button>
+<div id="mainApp" class="screen-hidden" data-page-node-id="2icAG1UunUyzlfiC195dCh">
+  <div class="app-header" data-page-node-id="qes7fQrmSU4udfTEoStCHD">
+    <h1 data-page-node-id="JDylWCHT2frnzVDEWR91uJ">📋 芳草九年级巡课汇总 <span class="ver" data-page-node-id="4wLSGQAWpmnckfVBcf2Tlm">v1.0.0</span></h1>
+    <div class="header-info" data-page-node-id="JLpSjG8TN3CYedi8A5Nzud">
+      <div class="user" id="headerUser" data-page-node-id="8oXtAE5PCHeDr0v5z5mHu5"></div>
+      <div class="date" id="headerDate" data-page-node-id="5AqJvKcfHeeIVur7ms9GSf"></div>
+      <button class="logout-btn" onclick="logout()" data-page-node-id="F1ZOHtLDfSXSdjQEqA8QAR">退出</button>
     </div>
   </div>
 
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="patrol" onclick="switchTab('patrol')">巡课</button>
-    <button class="tab-btn" data-tab="summary" onclick="switchTab('summary')">汇总</button>
-    <button class="tab-btn" data-tab="feedback" onclick="switchTab('feedback')">反馈</button>
-    <button class="tab-btn" data-tab="stats" onclick="switchTab('stats')">统计</button>
-    <button class="tab-btn" data-tab="settings" onclick="switchTab('settings')">设置</button>
-    <button class="tab-btn" data-tab="issues" onclick="switchTab('issues')">问题</button>
+  <div class="tab-bar" data-page-node-id="EuQkGnEJQy5fTWdPPs6xQE">
+    <button class="tab-btn active" data-tab="patrol" onclick="switchTab('patrol')" data-page-node-id="8nniYNyHIZxVY6awKhMU01">巡课</button>
+    <button class="tab-btn" data-tab="summary" onclick="switchTab('summary')" data-page-node-id="Iw0klbgVhGbzeTFYX0mF5B">汇总</button>
+    <button class="tab-btn" data-tab="feedback" onclick="switchTab('feedback')" data-page-node-id="GYY1KdWSsFobXA9kioFJvN">反馈</button>
+    <button class="tab-btn" data-tab="stats" onclick="switchTab('stats')" data-page-node-id="6KDLyPqcS6aS6j0EY4RE65">统计</button>
+    <button class="tab-btn" data-tab="settings" onclick="switchTab('settings')" data-page-node-id="gsbEVb6CTnk5D4UZdLH4cF">设置</button>
+    <button class="tab-btn" data-tab="issues" onclick="switchTab('issues')" data-page-node-id="XsGBoHGbhwDpAzzxsnZFTH">问题</button>
   </div>
 
   <!-- Patrol Tab -->
-  <div id="tab-patrol" class="tab-content active">
-    <div class="period-bar">
-      <span class="label">当前节次</span>
-      <select id="periodSelect" onchange="onPeriodChange()"></select>
-      <span class="time-info" id="periodTime"></span>
-      <span class="auto-tag" id="autoPeriodTag" style="display:none">自动检测</span>
+  <div id="tab-patrol" class="tab-content active" data-page-node-id="auznQizLUx1BQDTtqGwYzT">
+    <div class="period-bar" data-page-node-id="hC0M6aWk6MvBdLr51820JH">
+      <span class="label" data-page-node-id="l1FRHsVodqDef96pELRkMg">当前节次</span>
+      <select id="periodSelect" onchange="onPeriodChange()" data-page-node-id="kYVDOXem1ZwucfwiDri5dj"></select>
+      <span class="time-info" id="periodTime" data-page-node-id="nI0tSNFAUlztFYrZctWgUe"></span>
+      <span class="auto-tag" id="autoPeriodTag" style="display:none" data-page-node-id="eFyJXCJDFFk2XTFFUVCJFt">自动检测</span>
     </div>
-    <div class="period-bar" style="margin-top:8px">
-      <span class="label">日期</span>
-      <input type="date" id="patrolDate" onchange="onPatrolDateChange()" max="" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit">
-      <button class="btn btn-outline btn-sm" onclick="goToToday()">今天</button>
+    <div class="period-bar" style="margin-top:8px" data-page-node-id="B6aFN7aPvoydqrftgl5qID">
+      <span class="label" data-page-node-id="gq0K9DMcAPAwE9ys8GJlgK">日期</span>
+      <input type="date" id="patrolDate" onchange="onPatrolDateChange()" max="" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit" data-page-node-id="5ByPukbajunRzZGKDf965w">
+      <button class="btn btn-outline btn-sm" onclick="goToToday()" data-page-node-id="VmpMuAQnMSOqWAt57sAgts">今天</button>
     </div>
-    <div class="patrol-actions">
-      <button class="btn btn-outline btn-sm" onclick="resetAllToA()">全部标记为A</button>
-      <button class="btn btn-outline btn-sm" onclick="resetAllToOutdoor()">⚽ 全部标记为室外体育课</button>
-      <button class="btn btn-outline btn-sm" onclick="toggleStandards()">📋 打分标准</button>
-      <span id="patrolSaveStatus" class="save-indicator"></span>
+    <div class="patrol-actions" data-page-node-id="g0FCzzWworV0UnEK8oLlSk">
+      <button class="btn btn-outline btn-sm" onclick="resetAllToA()" data-page-node-id="yrjFHt5jTr622YYAYqdPze">全部标记为A</button>
+      <button class="btn btn-outline btn-sm" onclick="resetAllToOutdoor()" data-page-node-id="JQuS2dkIaAFpFvcZ2YEdRE">⚽ 全部标记为室外课</button>
+      <button class="btn btn-outline btn-sm" onclick="toggleStandards()" data-page-node-id="Mh7HzFBpG1NjnozotINxAF">📋 打分标准</button>
+      <span id="patrolSaveStatus" class="save-indicator" data-page-node-id="oRvZrl51Q4u59tHsAPbGEI"></span>
     </div>
-    <div id="standardsPanel" class="screen-hidden" style="background:#fff;border-radius:var(--radius);padding:12px 16px;margin-bottom:12px;font-size:13px;line-height:1.8">
-      <div style="font-weight:600;margin-bottom:6px">📝 巡堂三环节关注点</div>
-      <div style="margin-bottom:8px"><b>教室环境：</b>地面干净、讲台/黑板清洁到位、清洁用具摆放整齐、桌椅摆放整齐、窗帘按统一要求整理、窗户按统一要求开关、走廊清洁到位、垃圾清理干净</div>
-      <div style="margin-bottom:8px"><b>课堂纪律：</b>课前准备到位，遵守课堂纪律，不讲小话、不做小动作，不做与上课无关的事情</div>
-      <div style="margin-bottom:8px"><b>学习状态：</b>学习专注，听讲认真，积极参与、不东张西望，不发呆走神</div>
-      <div style="color:var(--text2);font-size:12px">每个巡查项目评价分为 A、B、C 三个等级。若不是A等级，请简述原因。</div>
+    <div id="standardsPanel" class="screen-hidden" style="background:#fff;border-radius:var(--radius);padding:12px 16px;margin-bottom:12px;font-size:13px;line-height:1.8" data-page-node-id="zlGYJIeAmxu4ymhDHAhtSn">
+      <div style="font-weight:600;margin-bottom:6px" data-page-node-id="uhY9UG9hPFQrsHH9O7mdpY">📝 巡堂三环节关注点</div>
+      <div style="margin-bottom:8px" data-page-node-id="2v8f4hIs0JXDMBO7AxgNpU"><b data-page-node-id="aEZ45Nb15p6wAlBltddDGi">教室环境：</b>地面干净、讲台/黑板清洁到位、清洁用具摆放整齐、桌椅摆放整齐、窗帘按统一要求整理、窗户按统一要求开关、走廊清洁到位、垃圾清理干净</div>
+      <div style="margin-bottom:8px" data-page-node-id="XsKgG58CSoQbxz4kwUzarK"><b data-page-node-id="gp69TO1O9Qv6aMsHHK5Epm">课堂纪律：</b>课前准备到位，遵守课堂纪律，不讲小话、不做小动作，不做与上课无关的事情</div>
+      <div style="margin-bottom:8px" data-page-node-id="pnIWUC3Fn8CC2jwXmW3DWr"><b data-page-node-id="bU3kV4D5DRApvO4xMlIc9O">学习状态：</b>学习专注，听讲认真，积极参与、不东张西望，不发呆走神</div>
+      <div style="color:var(--text2);font-size:12px" data-page-node-id="hcycjgfBdHQMJP6nDIHzcy">每个巡查项目评价分为 A、B、C 三个等级。若不是A等级，请简述原因。</div>
     </div>
-    <div id="patrolProgress" style="background:#fff;border-radius:var(--radius);padding:8px 16px;margin-bottom:10px;display:flex;align-items:center;gap:8px;font-size:13px"></div>
-    <div id="patrolList"></div>
-    <div id="dailyNoteBox" class="screen-hidden" style="background:#fff;border-radius:var(--radius);padding:12px 16px;margin-top:10px">
-      <div class="note-title">📝 其他备注</div>
+    <div id="patrolProgress" style="background:#fff;border-radius:var(--radius);padding:8px 16px;margin-bottom:10px;display:flex;align-items:center;gap:8px;font-size:13px" data-page-node-id="Hn1g4kclsOD7eKsrpjA8Z1"></div>
+    <div id="patrolList" data-page-node-id="vlcCUr7UhKhhNh7Cp5EJwP"></div>
+    <div id="dailyNoteBox" class="screen-hidden" style="background:#fff;border-radius:var(--radius);padding:12px 16px;margin-top:10px" data-page-node-id="y3VeWsVWFBztLyh7uqTzhV">
+      <div class="note-title" data-page-node-id="z1VsxYwZA5txLBdRUeuWEx">📝 其他备注</div>
       <textarea id="dailyNoteInput" placeholder="记录其他值得记录的事情（如整体课堂情况、临时情况等），自动保存..." style="width:100%;min-height:70px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:14px;font-family:inherit;box-sizing:border-box" oninput="onDailyNoteInput()"></textarea>
-      <div id="dailyNoteStatus" style="font-size:12px;color:var(--text2);margin-top:4px"></div>
+      <div id="dailyNoteStatus" style="font-size:12px;color:var(--text2);margin-top:4px" data-page-node-id="gga01WFLGRHDtFljVZ1QTN"></div>
     </div>
   </div>
 
   <!-- Summary Tab -->
-  <div id="tab-summary" class="tab-content">
-    <div class="summary-bar">
-      <span>日期</span>
-      <input type="date" id="summaryDate" onchange="renderSummary()">
-      <button class="btn btn-outline btn-sm" onclick="renderSummary()">刷新</button>
-      <span id="summaryAutoRefresh" style="font-size:11px;color:var(--text2);margin-left:auto">每30秒自动刷新</span>
+  <div id="tab-summary" class="tab-content" data-page-node-id="26SNsAkj82zHQogjpfkTp6">
+    <div class="summary-bar" data-page-node-id="2tPu45mlpRrnZ2UMoyHEhm">
+      <span data-page-node-id="EPh1T7PhXNzy0SGyY8kDRA">日期</span>
+      <input type="date" id="summaryDate" onchange="renderSummary()" data-page-node-id="3ZApubwbwJALxozwyUsO9f">
+      <button class="btn btn-outline btn-sm" onclick="renderSummary()" data-page-node-id="UE94TbJppnTgYDIP4EbzyL">刷新</button>
+      <span id="summaryAutoRefresh" style="font-size:11px;color:var(--text2);margin-left:auto" data-page-node-id="dh27ZRgrYilpohRmgSRtY6">每30秒自动刷新</span>
     </div>
-    <div class="summary-stats" id="summaryStats"></div>
-    <div class="summary-table-wrap" id="summaryGrid"></div>
-    <div style="margin-top:12px">
-      <button class="btn btn-outline btn-sm" onclick="exportSummary()">导出汇总CSV</button>
-      <button class="btn btn-outline btn-sm" id="exportImgBtn" onclick="exportSummaryImage()">📷 导出图片</button>
+    <div class="summary-stats" id="summaryStats" data-page-node-id="oUAV1iC1ncx00jjSOLeV2O"></div>
+    <div class="summary-table-wrap" id="summaryGrid" data-page-node-id="oAiK0aSbXQg2evSBHR4a9F"></div>
+    <div style="margin-top:12px" data-page-node-id="yBoTG0q8hGu4jeutXPhLaL">
+      <button class="btn btn-outline btn-sm" onclick="exportSummary()" data-page-node-id="6k2UbIp3wH9DV63EnDrGpZ">导出汇总CSV</button>
+      <button class="btn btn-outline btn-sm" id="exportImgBtn" onclick="exportSummaryImage()" data-page-node-id="lfckY9wTBKI1qwmanSZC3A">📷 导出图片</button>
     </div>
   </div>
 
   <!-- Feedback Tab -->
-  <div id="tab-feedback" class="tab-content">
-    <div class="summary-bar">
-      <span>日期</span>
-      <input type="date" id="feedbackDate" onchange="renderFeedback()">
+  <div id="tab-feedback" class="tab-content" data-page-node-id="SFNAjilVuSOmcTzKAwWlrh">
+    <div class="summary-bar" data-page-node-id="V4YZEtnQhfjJBVCwLEh98d">
+      <span data-page-node-id="E42MSUs0zCnconEhvYVyeF">日期</span>
+      <input type="date" id="feedbackDate" onchange="renderFeedback()" data-page-node-id="IEfKzpBGdIz6GMRjytK9wK">
     </div>
-    <div class="feedback-section">
-      <h3>✅ 需要保留的 Keep</h3>
+    <div class="feedback-section" data-page-node-id="l6LYwHIfxQpAYdeL5mC8Bk">
+      <h3 data-page-node-id="rqgRqA1Ru7wGjR2tzPFYME">✅ 需要保留的 Keep</h3>
       <textarea id="keepPoints" placeholder="自动生成后可修改：表现好的班级、值得发扬的做法..."></textarea>
     </div>
-    <div class="feedback-section">
-      <h3>⚠️ 需要改进的 Improve</h3>
+    <div class="feedback-section" data-page-node-id="REk3nhbOCRuqs0OkpT3l7o">
+      <h3 data-page-node-id="KtfbqfnRmzWAotJMb03Wl7">⚠️ 需要改进的 Improve</h3>
       <textarea id="improvePoints" placeholder="自动生成后可修改：按现象归类的问题..."></textarea>
     </div>
-    <div class="feedback-section">
-      <h3>▶️ 需要开始的 Start</h3>
+    <div class="feedback-section" data-page-node-id="9S9kwC5kXLvxy0YrGeTzSi">
+      <h3 data-page-node-id="EGyECYFNIY3ockCk124R97">▶️ 需要开始的 Start</h3>
       <textarea id="startPoints" placeholder="默认延续上一份反馈，可修改：新的工作要求..."></textarea>
     </div>
-    <div class="feedback-section">
-      <h3>⏹️ 需要停止的 Stop</h3>
+    <div class="feedback-section" data-page-node-id="lmEjLzKapFKdILsbdgHPmM">
+      <h3 data-page-node-id="3CI7aRGwmYVKY1BkkdCkPV">⏹️ 需要停止的 Stop</h3>
       <textarea id="stopPoints" placeholder="默认延续上一份反馈，可修改：需要纠正的行为..."></textarea>
     </div>
-    <div class="feedback-section">
-      <h3>👤 记录人</h3>
-      <input type="text" id="recorder" placeholder="如记录人：某某某">
+    <div class="feedback-section" data-page-node-id="GtR2Re7G3y95Q68gkGfaCW">
+      <h3 data-page-node-id="2XOQ76qeBF8ImDfYrG2vNU">👤 记录人</h3>
+      <input type="text" id="recorder" placeholder="如记录人：某某某" data-page-node-id="R9BpadJ0p4lL5bYAuCTdf4">
     </div>
-    <div class="feedback-actions">
-      <button class="btn btn-primary btn-sm" onclick="generateFeedback()">自动生成</button>
-      <button class="btn btn-outline btn-sm" onclick="saveFeedback()">保存反馈</button>
-      <button class="btn btn-outline btn-sm" onclick="exportFeedbackImage()">📷 导出图片</button>
-      <button class="btn btn-primary btn-sm" onclick="exportFeedbackWord()">导出Word</button>
+    <div class="feedback-actions" data-page-node-id="NlaPwUgVBWMr0ueRgAZcrl">
+      <button class="btn btn-primary btn-sm" onclick="generateFeedback()" data-page-node-id="E0DvakA5m1R8Fy5M9JkSy8">自动生成</button>
+      <button class="btn btn-outline btn-sm" onclick="saveFeedback()" data-page-node-id="08gweiMAbhhoJl8ZBHE33B">保存反馈</button>
+      <button class="btn btn-outline btn-sm" onclick="exportFeedbackImage()" data-page-node-id="gE3YDqnh349uxMMAzH7Sf9">📷 导出图片</button>
+      <button class="btn btn-primary btn-sm" onclick="exportFeedbackWord()" data-page-node-id="3FywF35xKWeqlRblR1asDN">导出Word</button>
     </div>
   </div>
 
   <!-- Stats Tab -->
-  <div id="tab-stats" class="tab-content">
-    <div class="summary-bar">
-      <span>范围</span>
-      <select id="statsRange" onchange="renderStats()" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit">
-        <option value="today">当天</option>
-        <option value="week">本周</option>
-        <option value="month">本月</option>
+  <div id="tab-stats" class="tab-content" data-page-node-id="mLQrrswQZ3KwxVfkRBaCrt">
+    <div class="summary-bar" data-page-node-id="W5Yptt2etSJfGnitievCGy">
+      <span data-page-node-id="cK4oIYUBRk9VGA4AxX6tMg">范围</span>
+      <select id="statsRange" onchange="renderStats()" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit" data-page-node-id="qeXWcBfkbwKBcDhM2JNnIn">
+        <option value="today" data-page-node-id="Cqwt2FDXS9tTUeRkWbiWqY">当天</option>
+        <option value="week" data-page-node-id="Nk1RCml6afzPzMKRzZEi9n">本周</option>
+        <option value="month" data-page-node-id="bgUkhy1vIF2T9hk0YxAnmq">本月</option>
       </select>
-      <button class="btn btn-outline btn-sm" onclick="renderStats()">刷新</button>
-      <button class="btn btn-outline btn-sm" onclick="exportStatsExcel()">📥 导出Excel</button>
+      <button class="btn btn-outline btn-sm" onclick="renderStats()" data-page-node-id="G2F6LDib8EWtEfI7GzsXHs">刷新</button>
+      <button class="btn btn-outline btn-sm" onclick="exportStatsExcel()" data-page-node-id="VMEdC6s1MDtDMSJwAJyQbE">📥 导出Excel</button>
     </div>
-    <div id="statsSummary" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"></div>
-    <div style="background:#fff;border-radius:var(--radius);padding:12px;margin-bottom:12px">
-      <h3 style="font-size:15px;margin-bottom:8px">📊 各班A率趋势</h3>
-      <canvas id="chartClassTrend" style="max-height:300px"></canvas>
+    <div id="statsSummary" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px" data-page-node-id="oWACzptaYznPMeveiiFTew"></div>
+    <div style="background:#fff;border-radius:var(--radius);padding:12px;margin-bottom:12px" data-page-node-id="tFiCZytB2bz3YrST351MBt">
+      <h3 style="font-size:15px;margin-bottom:8px" data-page-node-id="QiFbBTR4jjTYRr3RhGLWmP">📊 各班A率趋势</h3>
+      <canvas id="chartClassTrend" style="max-height:300px" data-page-node-id="jdJAtasuqIc4mJSHFlzotS"></canvas>
     </div>
-    <div style="background:#fff;border-radius:var(--radius);padding:12px;margin-bottom:12px">
-      <h3 style="font-size:15px;margin-bottom:8px">📈 每日出勤率趋势</h3>
-      <canvas id="chartDailyTrend" style="max-height:300px"></canvas>
+    <div style="background:#fff;border-radius:var(--radius);padding:12px;margin-bottom:12px" data-page-node-id="lFBUleaB6WNZV2yzsseuBo">
+      <h3 style="font-size:15px;margin-bottom:8px" data-page-node-id="LM1t9O3w3kL6odoPwZu3RS">📈 每日出勤率趋势</h3>
+      <canvas id="chartDailyTrend" style="max-height:300px" data-page-node-id="a9PbRPZRmiYVjy4nPX3Cbh"></canvas>
     </div>
-    <div style="background:#fff;border-radius:var(--radius);padding:12px;margin-bottom:12px">
-      <h3 style="font-size:15px;margin-bottom:8px">🔍 重点关注班级</h3>
-      <div id="statsAlerts"></div>
+    <div style="background:#fff;border-radius:var(--radius);padding:12px;margin-bottom:12px" data-page-node-id="ksG8OXonZgHRqDe7SC8pG1">
+      <h3 style="font-size:15px;margin-bottom:8px" data-page-node-id="deMSFN5lC5zrNNOy22ttwu">🔍 重点关注班级</h3>
+      <div id="statsAlerts" data-page-node-id="5z8xCJU1nU4Ac3qYzbLBJr"></div>
     </div>
   </div>
 
   <!-- Settings Tab -->
-  <div id="tab-settings" class="tab-content">
-    <div class="settings-subtabs">
-      <button class="settings-subtab active" onclick="switchSettingsTab('classes')">班级管理</button>
-      <button class="settings-subtab" onclick="switchSettingsTab('teachers')">教师管理</button>
-      <button class="settings-subtab" onclick="switchSettingsTab('schedule')">课表配置</button>
-      <button class="settings-subtab" onclick="switchSettingsTab('periods')">节次时间</button>
+  <div id="tab-settings" class="tab-content" data-page-node-id="uUQY9PsYWKH7Gb9TzLeXji">
+    <div class="settings-subtabs" data-page-node-id="FTNSlrPcVhGWqaribiOdiG">
+      <button class="settings-subtab active" onclick="switchSettingsTab('classes')" data-page-node-id="2qtpkdpttLRayE4rmPgmGl">班级管理</button>
+      <button class="settings-subtab" onclick="switchSettingsTab('teachers')" data-page-node-id="d1EVsHqil9RkFQYQp480yf">教师管理</button>
+      <button class="settings-subtab" onclick="switchSettingsTab('schedule')" data-page-node-id="aZI0Cw8ta4TkLrRlApBHgT">课表配置</button>
+      <button class="settings-subtab" onclick="switchSettingsTab('periods')" data-page-node-id="lWvRYVKRnkENqucWZKHiqH">节次时间</button>
     </div>
-    <div id="settingsClasses"></div>
-    <div id="settingsTeachers" class="screen-hidden"></div>
-    <div id="settingsSchedule" class="screen-hidden"></div>
-    <div id="settingsPeriods" class="screen-hidden"></div>
+    <div id="settingsClasses" data-page-node-id="TA2ypznMt6JhB6O4KMxr3Y"></div>
+    <div id="settingsTeachers" class="screen-hidden" data-page-node-id="tACgRCnmOS4yT4PDEc7Yyx"></div>
+    <div id="settingsSchedule" class="screen-hidden" data-page-node-id="no1fWXERJVLGk6Qz4HQCaV"></div>
+    <div id="settingsPeriods" class="screen-hidden" data-page-node-id="u6fCUWl4AUKVPooGCtjYOp"></div>
   </div>
 
   <!-- Issues Tab -->
-  <div id="tab-issues" class="tab-content">
-    <div class="summary-bar">
-      <span>问题跟踪闭环</span>
-      <select id="issueFilter" onchange="renderIssues()" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit">
-        <option value="全部">全部状态</option>
-        <option>待处理</option>
-        <option>处理中</option>
-        <option>已解决</option>
-        <option>已关闭</option>
+  <div id="tab-issues" class="tab-content" data-page-node-id="8bGYD2fZSIGgzMmwX4P9cA">
+    <div class="summary-bar" data-page-node-id="kR2MBdcgFSLIWHs2qyDcRg">
+      <span data-page-node-id="1bZsWZoO9s7JzimVo3XXpG">问题跟踪闭环</span>
+      <select id="issueFilter" onchange="renderIssues()" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit" data-page-node-id="5c8x8wvLDccmw3Eilp2yu4">
+        <option value="全部" data-page-node-id="APtJd45P3pFvcYpYvfJgLg">全部状态</option>
+        <option data-page-node-id="irFZK5HL9cJ6Hkntsknbpe">待处理</option>
+        <option data-page-node-id="ReqRDJtszERgZxdKJRo0f8">处理中</option>
+        <option data-page-node-id="usOp3z1ENHicFUGjo5RnwS">已解决</option>
+        <option data-page-node-id="TxaMRSY9Greh3GJPJsmLtB">已关闭</option>
       </select>
-      <button class="btn btn-outline btn-sm" onclick="exportIssues()">导出Excel</button>
+      <button class="btn btn-outline btn-sm" onclick="exportIssues()" data-page-node-id="k2o4WHWpcjwBPhbE8p8NML">导出Excel</button>
     </div>
-    <div id="issueStats" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"></div>
-    <div style="background:#fff;border-radius:var(--radius);padding:12px 16px;margin-bottom:12px">
-      <div style="font-weight:600;margin-bottom:8px">➕ 新建问题</div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-        <input type="date" id="issueDate">
-        <select id="issueClass"><option value="">不指定班级</option></select>
-        <select id="issueCategory">
-          <option>教室环境</option><option>课堂纪律</option><option>学习状态</option><option>系统问题</option><option>其他</option>
+    <div id="issueStats" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px" data-page-node-id="bqK0sy8nJRplDErACDxbE0"></div>
+    <div style="background:#fff;border-radius:var(--radius);padding:12px 16px;margin-bottom:12px" data-page-node-id="GL1uwjIwpbu3VaVfu8mNcl">
+      <div style="font-weight:600;margin-bottom:8px" data-page-node-id="OmQ9sgGIFJ0vQeTIzrTsCe">➕ 新建问题</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center" data-page-node-id="zh2WZHZBeDtHf5MxVvQWdl">
+        <input type="date" id="issueDate" data-page-node-id="2aXqHoF9VOHl4yHYhVNoCF">
+        <select id="issueClass" data-page-node-id="0tYoFRtu756KLgbDGbV1Ec"><option value="" data-page-node-id="JdTKhelOJksNAOSgqNZh1w">不指定班级</option></select>
+        <select id="issueCategory" data-page-node-id="PYGmkRsbGNkXhPttBNnUyD">
+          <option data-page-node-id="PSnGLhGuF77HzcSVqKN9YE">教室环境</option><option data-page-node-id="RykZlZRatBvleTFez9eYAg">课堂纪律</option><option data-page-node-id="AZYTdIdNUrdgPZJHGtjd4t">学习状态</option><option data-page-node-id="eKsB3pONrMA9rnVrjO30uA">系统问题</option><option data-page-node-id="HrEm1OqMAEqtMBMj8JyphP">其他</option>
         </select>
-        <input type="text" id="issueReporter" placeholder="提交人" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px">
+        <input type="text" id="issueReporter" placeholder="提交人" style="padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px" data-page-node-id="wSEdv1UKUIN39SCIZ0DrIG">
       </div>
-      <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+      <div style="margin-top:8px;display:flex;gap:8px;align-items:center" data-page-node-id="GQaqKB9i4UUXC42XiM53Bk">
         <textarea id="issueContent" placeholder="问题描述..." style="flex:1;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit;min-height:60px"></textarea>
-        <button class="btn btn-primary btn-sm" onclick="addIssue()">提交问题</button>
+        <button class="btn btn-primary btn-sm" onclick="addIssue()" data-page-node-id="l1UiTQFrRCXberrla73vg4">提交问题</button>
       </div>
     </div>
-    <div id="issueList"></div>
+    <div id="issueList" data-page-node-id="mWbAk0uDRVWLmXFDqSrTsO"></div>
   </div>
 </div>
 
 <!-- Detail Modal -->
-<div id="detailModal" class="photo-modal screen-hidden" style="background:rgba(0,0,0,0.5)" onclick="closeDetailModal(event)">
-  <div style="background:#fff;border-radius:12px;padding:20px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;position:relative">
-    <div class="detail-close" style="position:absolute;top:8px;right:12px;cursor:pointer;font-size:22px;color:var(--text2)">×</div>
-    <div id="detailModalBody"></div>
+<div id="detailModal" class="photo-modal screen-hidden" style="background:rgba(0,0,0,0.5)" onclick="closeDetailModal(event)" data-page-node-id="nCQDhFPbYZATC9ShdGtQIC">
+  <div style="background:#fff;border-radius:12px;padding:20px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;position:relative" data-page-node-id="zfUwGTh7Qr8ACMMZCfF5To">
+    <div class="detail-close" style="position:absolute;top:8px;right:12px;cursor:pointer;font-size:22px;color:var(--text2)" data-page-node-id="H8Rfn6uTMqtZYkOPqBKZ77">×</div>
+    <div id="detailModalBody" data-page-node-id="28jXKmffbPD9UnzEVOFVGZ"></div>
   </div>
 </div>
 
 <!-- Photo Modal -->
-<div id="photoModal" class="photo-modal screen-hidden" onclick="closePhotoModal(event)">
-  <div class="close-btn">×</div>
-  <img id="photoModalImg" src="">
+<div id="photoModal" class="photo-modal screen-hidden" onclick="closePhotoModal(event)" data-page-node-id="qZmyErOIOPkMJpRDwJdKAZ">
+  <div class="close-btn" data-page-node-id="vavcprccQBOSF6NWrIBPgo">×</div>
+  <img id="photoModalImg" src="" data-page-node-id="F0ioYJeQUyx1v160LFA6t8">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
@@ -753,10 +753,10 @@ function schedulePatrolSave(dateStr, classId, period) {
 // 详细图文步骤见《部署指南.html》
 // ============================================================
 const EMBEDDED_CONFIG = {
-  supabaseUrl: 'https://gcjgdjqjsirkczutibbl.supabase.co',
-  supabaseKey: 'sb_publishable_MLJYlisOZcSYVfPL8-FoaQ_-N5cn8go'
+  supabaseUrl: 'https://obwzkxilsnxowhenicbu.supabase.co',
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9id3preGlsc254b3doZW5pY2J1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5MTkwNzAsImV4cCI6MjEwNDQ5NTA3MH0.Ls_dK_dTXObxkt4glFvWbpnMrC8L1wMcDImIinY6KjI'
 };
-const ADMIN_PASSWORD = 'fczx2026';
+const ADMIN_PASSWORD = 'eqjwc';
 // 全体教师统一登录密码（三个年级网页共用同一个，修改后请同步告知老师们）
 const TEACHER_PASSWORD = 'fc2026';
 const PATROL_GROUPS = ['语文', '数学', '英语', '道法', '历史', '物理', '化学', '体育'];
@@ -814,14 +814,15 @@ const SPECIAL_OPTIONS = [
   { value: '', label: '正常' },
   { value: '开会', label: '开年级大会' },
   { value: '学生自习', label: '学生自习' },
-  { value: '室外体育课', label: '室外体育课' }
+  { value: '室外课', label: '室外课' }
 ];
 const SCORE_COLORS = { 'A': 'var(--green)', 'B': 'var(--orange)', 'C': 'var(--red)' };
 const SCORE_BG = { 'A': 'var(--green-bg)', 'B': 'var(--orange-bg)', 'C': 'var(--red-bg)' };
 const SPECIAL_DISPLAY = {
   '开会': { short: '开会', badge: '📢 开年级大会' },
   '学生自习': { short: '自习', badge: '📖 学生自习' },
-  '室外体育课': { short: '体育课', badge: '⚽ 室外体育课' }
+  '室外课': { short: '体育课', badge: '⚽ 室外课' },
+  '室外体育课': { short: '体育课', badge: '⚽ 室外课' }
 };
 // B/C 等级的预设原因标签
 const REASON_TAGS = {
@@ -1528,10 +1529,10 @@ async function resetAllToA() {
 }
 
 async function resetAllToOutdoor() {
-  showConfirm('确定将所有班级标记为室外体育课吗？', async function() {
+  showConfirm('确定将所有班级标记为室外课吗？', async function() {
     for (const cls of visibleClasses()) {
       const key = cls.id + '_' + state.currentPeriod;
-      state.records[key] = { scores: {}, reasons: {}, remark: '', special: '室外体育课', has_photo: false, inspector: state.teacher };
+      state.records[key] = { scores: {}, reasons: {}, remark: '', special: '室外课', has_photo: false, inspector: state.teacher };
       try {
         await savePatrolRecord(state.viewDate, cls.id, state.currentPeriod, state.records[key]);
       } catch (err) {
@@ -1540,7 +1541,7 @@ async function resetAllToOutdoor() {
       }
     }
     renderPatrol();
-    showToast('已全部标记为室外体育课', 'success');
+    showToast('已全部标记为室外课', 'success');
   });
 }
 
@@ -1562,25 +1563,29 @@ function getPhotoUrl(path) {
   return data.publicUrl;
 }
 async function compressImage(file, maxWidth, quality) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const img = new Image();
-      img.onload = function() {
-        const canvas = document.createElement('canvas');
-        let w = img.width, h = img.height;
-        if (w > maxWidth) { h = Math.round(h * maxWidth / w); w = maxWidth; }
-        canvas.width = w; canvas.height = h;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, w, h);
-        resolve(canvas.toDataURL('image/jpeg', quality));
+  // 优先用 createImageBitmap 读取真实方向，修复手机拍照照片旋转90°的问题
+  let img;
+  try {
+    img = await createImageBitmap(file, { imageOrientation: 'from-image' });
+  } catch (e) {
+    img = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const im = new Image();
+        im.onload = function() { resolve(im); };
+        im.onerror = reject;
+        im.src = ev.target.result;
       };
-      img.onerror = reject;
-      img.src = e.target.result;
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+  let w = img.width, h = img.height;
+  if (w > maxWidth) { h = Math.round(h * maxWidth / w); w = maxWidth; }
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+  return canvas.toDataURL('image/jpeg', quality);
 }
 
 async function onPhotoSelected(classId, period, input) {
@@ -3187,12 +3192,12 @@ window.addEventListener('DOMContentLoaded', init);
 </script>
 <script>window.addEventListener('load',function(){var el=document.getElementById('app-loading');if(el){el.style.opacity='0';setTimeout(function(){el.remove()},300)}});</script>
 <!-- 通用确认弹层（兼容QQ内嵌浏览器） -->
-<div id="confirmOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;align-items:center;justify-content:center;padding:20px" onclick="cancelConfirm()">
-  <div style="background:#fff;border-radius:14px;padding:22px;width:100%;max-width:320px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.2)" onclick="event.stopPropagation()">
-    <div id="confirmTitle" style="font-size:16px;font-weight:600;margin-bottom:14px;line-height:1.5">确定执行此操作吗？</div>
-    <div style="display:flex;gap:10px">
-      <button class="btn btn-outline" style="flex:1" onclick="cancelConfirm()">取消</button>
-      <button class="btn btn-primary" style="flex:1" onclick="doConfirm()">确定</button>
+<div id="confirmOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;align-items:center;justify-content:center;padding:20px" onclick="cancelConfirm()" data-page-node-id="D0C99uHhgCWnMGxQEtnjjI">
+  <div style="background:#fff;border-radius:14px;padding:22px;width:100%;max-width:320px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.2)" onclick="event.stopPropagation()" data-page-node-id="Lb2Pne6CHRSNcOKt2CzQW4">
+    <div id="confirmTitle" style="font-size:16px;font-weight:600;margin-bottom:14px;line-height:1.5" data-page-node-id="bmpTX62L9FVptkG3JcK6kQ">确定执行此操作吗？</div>
+    <div style="display:flex;gap:10px" data-page-node-id="oErDGZpjzfRy3xdwF59eAI">
+      <button class="btn btn-outline" style="flex:1" onclick="cancelConfirm()" data-page-node-id="rK7IdE5sqW8RuWL3IXaLWc">取消</button>
+      <button class="btn btn-primary" style="flex:1" onclick="doConfirm()" data-page-node-id="OWbDeCGLlUeQMLsbDppgsi">确定</button>
     </div>
   </div>
 </div>
